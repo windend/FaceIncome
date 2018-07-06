@@ -1,0 +1,20 @@
+{
+  "pages": [
+    "pages/image/image",
+    "pages/history/history",
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#000000",
+    "navigationBarTitleText": "halo",
+    "navigationBarTextStyle": "white",
+    "onReachBottomDistance": 1,
+    "enablePullDownRefresh": false,
+    "backgroundColor": "#eeeeee"
+  },
+  "networkTimeout": {
+    "request": 10000
+  }
+}

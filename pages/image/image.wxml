@@ -1,0 +1,18 @@
+<!--pages/image/image.wxml-->
+<view id='main' style='height:{{hh}}px;' >
+  <view id='new'>
+    <button bindtap='news'>news</button>
+  </view>
+  <view id='img'>
+    <view id='circle' bindtap='open'>
+      <image src='{{path}}' mode='aspectFill'></image>
+    </view>
+
+  </view>
+  <view class='btn'>
+    <button bindtap='albumn' style="background-image: url('https://i.loli.net/2018/06/27/5b3359ce758ef.png')" disabled='{{disable}}'></button>
+    <button bindtap='open' style="background-image: url('https://i.loli.net/2018/06/27/5b3359ce76abd.png')" disabled='{{disable}}'></button>
+    <button bindtap='his' style="background-image: url('https://i.loli.net/2018/06/27/5b3359ce7b91b.png')" disabled='{{disable}}'></button>
+  </view>
+</view>
+<canvas canvas-id='ff' style='width:{{w}}; height: {{h}};'></canvas>

@@ -1,0 +1,106 @@
+/* pages/image/image.wxss */
+
+#main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+   background-color: #000; 
+}
+
+#img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 3;
+}
+
+#circle {
+  height: 16rem;
+  width: 16rem;
+  border-radius: 50%;
+  border-style: solid;
+  border-color: gainsboro;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 0px 30px silver;
+}
+
+image {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  /* visibility: hidden */
+  animation: fadein 3s 0s 1;
+  /* transition: opacity 2s linear;
+  opacity: 0  */
+}
+
+/* image:hover{
+  opacity: 100
+} */
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+#new {
+  align-self: flex-end;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#new button {
+  top: 10px;
+  height: 30px;
+  width: 100px;
+  border-radius: 15px 0 0 15px;
+  text-align: center;
+  visibility: hidden;
+}
+
+.button-hover {
+  background-color: gainsboro;
+}
+
+.btn {
+  /* margin-top: 2rem; */
+  display: flex;
+  align-items: center;
+}
+
+.btn button:nth-child(1), button:nth-child(3) {
+  height: 2.5rem;
+  width: 2.5rem;
+  border-radius: 50%;
+  background-color: black;
+  background-size: 1.5rem;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-color: silver;
+  border-style: solid;
+  border-width: 1px;
+  box-shadow: 0px 0px 10px silver;
+}
+
+.btn button:nth-child(2) {
+  bottom: 10px;
+  height: 4rem;
+  width: 4rem;
+  border-radius: 50%;
+  background-color: black;
+  background-size: 3rem;
+  background-repeat: no-repeat;
+  background-position: center;
+  /* border-color: silver;
+  border-style: solid;
+  border-width: 1px; */
+  box-shadow: 0px 0px 10px gold;
+}

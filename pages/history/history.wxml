@@ -1,0 +1,81 @@
+<!--pages/history/history.wxml-->
+<wxs module="m1">
+  var config = {
+    male: '男性',
+    female: '女性',
+    square: '正方形脸',
+    triangle: '三角形脸',
+    oval: '椭圆形脸',
+    heart: '心形脸',
+    round: '圆形脸',
+    yellow: '黄种人',
+    white: '白种人',
+    black: '黑种人',
+    arabs: '阿拉伯人',
+    asian: '亚洲人',
+    anger: '愤怒',
+    disgust: '厌恶 ',
+    fear: '恐惧',
+    happiness: '高兴',
+    neutral: '平静',
+    sadness: '伤心',
+    surprise: '惊讶',
+    health: '健康',
+    stain: '色斑',
+    acne: '青春痘',
+    dark_circle: '黑眼圈',
+  }
+  var tofixed = function(a) {
+    return a.toFixed(1)
+  }
+  module.exports = {
+    configs: config
+    tofixed: tofixed
+  };
+</wxs>
+<!-- <canvas canvas-id='ff' wx:if="{{s}}"></canvas> -->
+<block wx:if="{{condition}}" wx:for="{{result}}" wx:key="face_token" >
+  <view id='main' style='height:{{hh}}px;'>
+    <view id='image'>
+      <canvas canvas-id="{{item.canvas}}"></canvas>
+      <!-- <image src='{{item.uri}}' mode='aspectFill'></image>   -->
+    </view>
+    <view id='detail'>
+      <text id='name'>{{item.age}}岁</text>
+      <text id='price'>{{m1.configs[item.gender.type]}}</text>
+      <view id='pro'>
+        <view class='l1'>
+          <text space='nbsp'>  颜值</text>
+        </view>
+        <view class='trial'></view>
+        <view class='l2'>
+          <text id='like' space='nbsp'> {{m1.tofixed(item.beauty)}} </text>
+        </view>
+      </view>
+      <text id='num'>{{m1.configs[item.race.type]}}</text>
+      <text id='shape'>{{m1.configs[item.face_shape.type]}}</text>
+    </view>
+  </view>
+</block>
+<block wx:if="{{!condition}}">
+  <view id='main' style='height:{{hh}}px;' >
+    <view id='image'>
+      <image src='{{path}}' mode='aspectFill'></image>
+    </view>
+    <view id='detail'>
+      <text id='name'>{{ages}}岁</text>
+      <text id='price'>{{sex}}</text>
+      <view id='pro'>
+        <view class='l1'>
+          <text space='nbsp'>  颜值</text>
+        </view>
+        <view class='trial'></view>
+        <view class='l2'>
+          <text id='like' space='nbsp'> {{beautys}} </text>
+        </view>
+      </view>
+      <text id='num'>{{races}}</text>
+      <text id='shape'>{{faceshape}}</text>
+    </view>
+  </view>
+</block>
