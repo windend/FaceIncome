@@ -1,4 +1,4 @@
-<!--pages/history/history.wxml-->
+ <!-- /pages/history/history.wxml  -->
 <wxs module="m1">
   var config = {
     male: '男性',
