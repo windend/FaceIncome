@@ -231,67 +231,64 @@ var base64 = function(the, img, callback) {
         h: sh + 'px'
       })
       ctx.drawImage(img, 0, 0, sw, sh)
+      // ctx.draw(false, () => {
+      // wx.canvasToTempFilePath({
+      //   canvasId: 'ff',
+      //   width: sw,
+      //   height: sh,
+      //   destWidth: sw,
+      //   destHeight: sh,
+      //   fileType: 'png',
+      //   success: function(res) {
+      //     app.globalData.img = res.tempFilePath
+      //     console.log(res)
+      //     wx.getImageInfo({
+      //       src: res.tempFilePath,
+      //       success: res => {
+      //         console.log(res)
+      //         the.setData({
+      //           w: res.width + 'px',
+      // h: res.height + 'px'
+      //         })
+      // ctx.drawImage(img, 0, 0, res.width, res.height)
       ctx.draw(false, () => {
-        wx.canvasToTempFilePath({
+        wx.canvasGetImageData({
           canvasId: 'ff',
+          x: 0,
+          y: 0,
           width: sw,
           height: sh,
-          destWidth: sw,
-          destHeight: sh,
-          fileType: 'png',
           success: function(res) {
-            // app.globalData.img = res.tempFilePath
             // console.log(res)
-            wx.getImageInfo({
-              src: res.tempFilePath,
-              success: res => {
-                console.log(res)
-                the.setData({
-                  w: res.width + 'px',
-                  h: res.height + 'px'
-                })
-                ctx.drawImage(img, 0, 0, res.width, res.height)
-                ctx.draw(false, () => {
-                  wx.canvasGetImageData({
-                    canvasId: 'ff',
-                    x: 0,
-                    y: 0,
-                    width: res.width,
-                    height: res.height,
-                    success: function(res) {
-                      // console.log(res)
-                      let result = res.data
-                      // let platform = wx.getSystemInfoSync().platform
+            let result = res.data
+            // let platform = wx.getSystemInfoSync().platform
 
-                      if (app.sysinfo.platform == 'ios') {
-                        // 兼容处理：ios获取的图片上下颠倒
-                        result = reversedata(res).data
-                      };
+            if (app.sysinfo.platform == 'ios') {
+              // 兼容处理：ios获取的图片上下颠倒
+              result = reversedata(res).data
+            };
 
-                      let sdata = upng.encode([result.buffer], res.width, res.height)
-                      let data = wx.arrayBufferToBase64(sdata)
-                      console.log(data.length)
-                      ctx.clearRect(0, 0, res.width, res.height)
-                      the.setData({
-                        w: 0 + 'px',
-                        h: 0 + 'px',
-                        hidden: !the.data.hidden
-                      })
-                      callback(data)
-                    }
-                  })
-
-                })
-
-              }
+            let sdata = upng.encode([result.buffer], res.width, res.height)
+            let data = wx.arrayBufferToBase64(sdata)
+            console.log(data.length)
+            ctx.clearRect(0, 0, res.width, res.height)
+            the.setData({
+              w: 0 + 'px',
+              h: 0 + 'px',
+              hidden: !the.data.hidden
             })
-
+            callback(data)
           }
         })
 
+        // })
 
+        // }
+        // })
 
+        // }
       })
+      // })
 
     }
   })
