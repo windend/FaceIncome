@@ -1,4 +1,4 @@
- <!-- /pages/history/history.wxml  -->
+<!-- /pages/history/history.wxml  -->
 <wxs module="m1">
   var config = {
     male: '男性',
@@ -34,31 +34,33 @@
   };
 </wxs>
 <!-- <canvas canvas-id='ff' wx:if="{{s}}"></canvas> -->
-<block wx:if="{{condition}}" wx:for="{{result}}" wx:key="face_token" >
-  <view id='main' style='height:{{hh}}px;'>
-    <view id='image'>
-      <canvas canvas-id="{{item.canvas}}"></canvas>
-      <!-- <image src='{{item.uri}}' mode='aspectFill'></image>   -->
-    </view>
-    <view id='detail'>
-      <text id='name'>{{item.age}}岁</text>
-      <text id='price'>{{m1.configs[item.gender.type]}}</text>
-      <view id='pro'>
-        <view class='l1'>
-          <text space='nbsp'>  颜值</text>
-        </view>
-        <view class='trial'></view>
-        <view class='l2'>
-          <text id='like' space='nbsp'> {{m1.tofixed(item.beauty)}} </text>
-        </view>
+<swiper circular='true' autoplay='true' style='height:{{hh}}px;' vertical='true' indicator-dots='true' interval='3000' duration='2000' indicator-active-color='#81d1d0'>
+  <block wx:for="{{result}}" wx:key="">
+    <swiper-item id='main'>
+      <view id='image'>
+        <canvas canvas-id="{{item.canvas}}"></canvas>
+        <!-- <image src='{{item.uri}}' mode='aspectFill'></image>   -->
       </view>
-      <text id='num'>{{m1.configs[item.race.type]}}</text>
-      <text id='shape'>{{m1.configs[item.face_shape.type]}}</text>
-    </view>
-  </view>
-</block>
+      <view id='detail'>
+        <text id='name'>{{item.age}}岁</text>
+        <text id='price'>{{m1.configs[item.gender.type]}}</text>
+        <view id='pro'>
+          <view class='l1'>
+            <text space='nbsp'>  颜值</text>
+          </view>
+          <view class='trial'></view>
+          <view class='l2'>
+            <text id='like' space='nbsp'> {{m1.tofixed(item.beauty)}} </text>
+          </view>
+        </view>
+        <text id='num'>{{m1.configs[item.race.type]}}</text>
+        <text id='shape'>{{m1.configs[item.face_shape.type]}}</text>
+      </view>
+    </swiper-item>
+  </block>
+</swiper>
 <block wx:if="{{!condition}}">
-  <view id='main' style='height:{{hh}}px;' >
+  <view id='main' style='height:{{hh}}px;'>
     <view id='image'>
       <image src='{{path}}' mode='aspectFill'></image>
     </view>

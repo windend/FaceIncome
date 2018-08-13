@@ -17,3 +17,7 @@ sub{
      font-size: 10px;
      vertical-align:text-bottom;
 }
+@font-face {
+  font-family: 'kaiti';
+  src: url('https://cloud-minapp-18353.cloud.ifanrusercontent.com/1fmxYABUrOWqIdkY.ttf');
+}

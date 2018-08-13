@@ -1,0 +1,331 @@
+.card {
+  height: 50%;
+  perspective: 1000;
+  -webkit-perspective: 1000;
+  width: 100%;
+  z-index: 1;
+}
+
+.card-flipped {
+  height: 50%;
+  perspective: 1000;
+  -webkit-perspective: 1000;
+  width: 100%;
+}
+
+.front {
+  z-index: 9;
+}
+
+.back {
+  transform: rotate3d(1, 0, 0, 180deg);
+  z-index: 10;
+}
+
+.card-flipped .front {
+  transform: rotate3d(1, 0, 0, -180deg);
+  z-index: 9;
+}
+
+.card-flipped .back {
+  transform: rotate3d(1, 0, 0, 0deg);
+  z-index: 10;
+}
+
+swiper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: #f5f5f5;
+}
+
+#main {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  align-items: center;
+  margin: 50px 0;
+}
+
+.image {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  transition: all 1s ease;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.detail {
+  background-color: white;
+  position: absolute;
+  top: 25%;
+  height: 50%;
+  width: 96%;
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-end;
+  align-items: center;
+  border-color: gainsboro;
+  border-radius: 5pt;
+  border-style: solid;
+  border-width: 1px;
+  box-shadow: 0px 0px 3px gainsboro;
+  /* color: grey; */
+}
+
+image {
+  border: solid 1px gainsboro;
+  border-radius: 5pt;
+  height: 80%;
+  width: 90%;
+  box-shadow: 0px 0px 3px gainsboro;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  /* filter: blur(9px); */
+}
+
+.image>view {
+  border-style: solid;
+  border-color: gainsboro;
+  border-radius: 5pt;
+  height: 80%;
+  width: 90%;
+  border-width: 1px;
+  box-shadow: 0px 0px 3px gainsboro;
+  /* padding-top: 1rem; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: white; *//* background-image: linear-gradient(45deg, lightgray, gray); */
+  background: -webkit-repeating-linear-gradient(45deg, #114abc, #114abc 10px, #fff 10px, #fff 20px, #bf2010 20px, #bf2010 30px, #fff 30px, #fff 40px);
+  background: repeating-linear-gradient(45deg, #114abc, #114abc 10px, #fff 10px, #fff 20px, #bf2010 20px, #bf2010 30px, #fff 30px, #fff 40px);
+  font-size: larger;
+}
+
+.div {
+  width: 96%;
+  height: 94%;
+  background-color: white;
+  z-index: 1;
+  border: solid 1px gainsboro;
+  border-radius: 5pt;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.div>view:first-child {
+  display: flex;
+  justify-content: space-around;
+}
+
+.h1 {
+  position: absolute;
+  left: 6.5%;
+  margin: 15px 0 10px -7px;
+  padding: 0.5rem;
+  background: #bf2010;
+  border-width: 1px 1px 1px 0px;
+  border-style: dashed;
+  color: #fff;
+  box-shadow: 2px 0 0 2px #bf2010,
+                2px 2px 0 2px #bf2010,
+                2px -2px 0 2px #bf2010,
+                inset 0 0 5px 2px rgba(0, 0, 0, 0.2);
+  font-size: medium;
+  font-family: serif;
+}
+
+.icons {
+  position: absolute;
+  right: 8%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon {
+  margin: 1rem 0.5rem;
+  height: 25px;
+  width: 25px;
+  border: 0 solid transparent;
+  box-shadow: 0 0 0 transparent;
+}
+
+.tips {
+  position: relative;
+  top: 35%;
+  left: 20%;
+  font-size: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  font-family: kaiti;
+}
+
+.tips>view {
+  border-bottom: solid 1px #114abc;
+  margin-bottom: 1rem;
+}
+
+.comment {
+  position: relative;
+  top: 30%;
+  left: 20%;
+}
+
+.comment input {
+  border-bottom: solid 1px #114abc;
+  position: relative;
+  top: 30%;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+.form {
+  display: flex;
+}
+
+.form button {
+  position: relative;
+  left: -10%;
+  height: 20px;
+  font-size: smaller;
+  font-family: serif;
+  line-height: 1;
+  background-image: linear-gradient(#bf2010, #bf2010);
+  border: dashed 1px #f5f5f5;
+  box-shadow: 1px 0 0 1px #bf2010,
+                1px 1px 0 1px #bf2010,
+                1px -1px 0 1px #bf2010,
+                -1px 0 0 1px #bf2010,
+                -1px 1px 0 1px #bf2010,
+                -1px -1px 0 1px #bf2010,
+                inset 0 0 5px 1px rgba(0, 0, 0, 0.2);
+  color: white;
+}
+
+.commentout {
+  position: relative;
+  top: 35%;
+  left: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  font-size: 1.25rem;
+  font-family: kaiti;
+}
+
+.commentout>view {
+  border-bottom: solid 1px #114abc;
+  margin-bottom: 1rem;
+}
+
+/* @keyframes typing {
+  from {
+    width: 0;
+  }
+}
+
+@keyframes blink-caret {
+  50% {
+    border-color: transparent;
+  }
+}
+
+.commentout>view text {
+  animation: typing 20s steps(30, end), blink-caret 0.5s step-end infinite alternate;
+} */
+
+.pro {
+  display: flex;
+  justify-content: center;
+}
+
+.trial {
+  border-width: 15.5px;
+  border-left-width: 7.5px;
+  border-color: black transparent black black;
+  border-style: solid;
+  /* box-shadow: 0px 1px 3px .aaa,0px 1px 3px .aaa ;   */
+}
+
+.name, .price, .pro, .num, .shape {
+  margin: 10px;
+}
+
+.l1 {
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 0px 3px gainsboro;
+}
+
+.l2 {
+  border-color: black;
+  border-width: 1px 1px 1px 0px;
+  border-style: solid;
+  margin-left: -1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* box-shadow: 1px 1px 1px .aaa,1px -1px 1px .aaa; */
+}
+
+
+.corner{
+    background:-webkit-linear-gradient(45deg, ghostwhite 24%, gainsboro 40%,grey 43%,gainsboro 46%,whitesmoke 50%,#fff 50%,#fff);
+    background:linear-gradient(45deg, ghostwhite 24%, gainsboro 40%,rgb(166, 166, 166) 43%,gainsboro 46%,whitesmoke 50%,#fff 50%,#fff);
+    width:60px;
+    height:60px;
+    border-top-right-radius: 5pt;
+    border-bottom-left-radius: 5pt;
+    -webkit-transform:rotate(-90deg);
+    transform:rotate(-90deg);
+    position:absolute;
+    right:0px;
+    bottom:0px;
+    box-shadow:5px 2px 8px gainsboro;
+
+    overflow:hidden;
+}
+/* .corner:after{
+    height:100%;
+    width:100%;
+    position:absolute;
+    content:"";
+    bottom:-40px;
+    right:-82px;
+    border-radius:90px 90px 0px 0 / 40px 40px 0 0;
+    z-index:1;
+    background:ghostwhite;
+    -webkit-transform:rotate(77deg);
+    transform:rotate(77deg);
+    box-shadow:0px 0px 8px black inset;
+} */
+
+.laji{
+  height: 25px;
+  width: 25px;
+  position: absolute;
+  right: 0px;
+  bottom: 1px;
+  background: transparent;
+  border: solid 0px transparent
+}
+.stamp {
+  font-size: smaller;
+  position: absolute;
+  right: -15px;
+  bottom: 100px;
+  transform: rotate(-90deg);
+  font-family: serif;
+  z-index: 7;
+  color: rgba(220, 220, 220, 0.5);
+}

@@ -2,16 +2,19 @@
 
 #main {
   display: flex;
+  display: -webkit-flex;
   flex-direction: column;
   justify-content: space-between;
-   background-color: #000; 
+  background-color: #000;
 }
 
 #img {
   display: flex;
+  display: -webkit-flex;
   justify-content: center;
   align-items: center;
   flex-grow: 3;
+  background: lin;
 }
 
 #circle {
@@ -21,6 +24,7 @@
   border-style: solid;
   border-color: gainsboro;
   display: inline-flex;
+  display: -webkit-inline-flex;
   justify-content: center;
   align-items: center;
   box-shadow: 0px 0px 30px silver;
@@ -32,6 +36,7 @@ image {
   border-radius: 50%;
   /* visibility: hidden */
   animation: fadein 3s 0s 1;
+  -webkit-animation: fadein 3s 0s 1
   /* transition: opacity 2s linear;
   opacity: 0  */
 }
@@ -53,6 +58,7 @@ image {
 #new {
   align-self: flex-end;
   display: flex;
+  display: -webkit-flex;
   justify-content: center;
   align-items: center;
 }
@@ -73,14 +79,16 @@ image {
 .btn {
   /* margin-top: 2rem; */
   display: flex;
+  display: -webkit-flex;
+  justify-content: space-around;
   align-items: center;
 }
 
-.btn button:nth-child(1), button:nth-child(3) {
+.btn>view:nth-child(1), .btn>view:nth-child(3) {
   height: 2.5rem;
   width: 2.5rem;
   border-radius: 50%;
-  background-color: black;
+  /* background-color: black; */
   background-size: 1.5rem;
   background-repeat: no-repeat;
   background-position: center;
@@ -88,14 +96,18 @@ image {
   border-style: solid;
   border-width: 1px;
   box-shadow: 0px 0px 10px silver;
+  margin-bottom: 0.25rem;
+  display: flex;
+  display: -webkit-flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.btn button:nth-child(2) {
-  bottom: 10px;
+.btn>view:nth-child(2) {
   height: 4rem;
   width: 4rem;
   border-radius: 50%;
-  background-color: black;
+  /* background-color: black; */
   background-size: 3rem;
   background-repeat: no-repeat;
   background-position: center;
@@ -103,4 +115,25 @@ image {
   border-style: solid;
   border-width: 1px; */
   box-shadow: 0px 0px 10px gold;
+  margin-bottom: 0.25rem;
+  display: flex;
+  display: -webkit-flex;
+  justify-content: center;
+  align-items: center;
 }
+
+.btn>view:nth-child(2)>image {
+  height: 70%;
+  width: 70%;
+  border-radius: 0;
+}
+
+.btn>view:nth-child(1)>image, .btn>view:nth-child(3)>image {
+  height: 70%;
+  width: 70%;
+  border-radius: 0;
+}
+
+/* .hoverc{
+  background-color: gainsboro
+} */

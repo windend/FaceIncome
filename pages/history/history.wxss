@@ -5,7 +5,7 @@
   flex-flow: column;
   justify-content: space-between;
   align-items: center;
-   background-color: #eee; 
+   background-color: #fff; 
 }
 
 #image {

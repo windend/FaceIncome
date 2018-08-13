@@ -1,0 +1,62 @@
+<wxs src='historys.wxs' module="m1" />
+<swiper style='height:{{hh}}px;' vertical='true' indicator-dots='' interval='' duration='500' indicator-active-color='#81d1d0' bindchange='change'>
+  <block wx:for="{{result}}" wx:key="">
+    <swiper-item id='main'>
+      <view id='{{item.id}}' class='{{item.id==id?cardss:cards}}' catchtap='flip' style='{{item.id==id?z:"z-index:1"}}' data-id='{{item.id}}'>
+        <view class='{{fflip}}'>
+          <image src="{{item.image}}" mode='aspectFill'></image>
+        </view>
+        <view class='{{bflip}}'>
+          <view class='subimage'>
+            <view class='div'>
+              <view>
+                <view class='h1'>To: You</view>
+                <view class='icons'>
+                  <image src='../../look.png' style='height:30px;width:30px' class='icon' bindtap='look' data-id='{{item.id}}'></image>
+                  <text style='font-size:smaller'>{{item.looknum}}</text>
+                  <!-- <image id='c{{index}}' src='../../comment.png' class='icon' catchtap='comment' data-cm='{{index}}' wx:if='{{item.tip}}'></image> -->
+                </view>
+              </view>
+              <view id='{{index}}' class='tips' wx:if='{{item.tip}}'>
+                <view>这家伙很懒，什么也没留下</view>
+                <!-- <view>点这里
+                  <image src='../../comment.png' class='icon' catchtap='comment' data-cm='{{index}}' style='display:inline-block;height:20px;width:20px;margin:0'></image> 可以写三行留言</view> -->
+                <view>点这里
+                  <image src='../../look.png' style='display:inline-block;height:25px;width:25px;margin:0' class='icon' bindtap='flip' data-id='{{item.id}}'></image> 查看照片</view>
+              </view>
+              <view wx:else class='commentout'>
+                <view wx:if='{{item.comment[0]?true:false}}'>
+                  <text>{{item.comment[0]}}</text>
+                </view>
+                <view wx:if='{{item.comment[1]?true:false}}'>
+                  <text>{{item.comment[1]}}</text>
+                </view>
+                <view wx:if='{{item.comment[2]?true:false}}'>
+                  <text>{{item.comment[2]}}</text>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class='detail'>
+        <text class='name'>{{item.age}}岁</text>
+        <text class='price '>{{m1.configs[item.sex]}}</text>
+        <view class='pro'>
+          <view class='l1'>
+            <text space='nbsp'> 颜值</text>
+          </view>
+          <view class='trial'></view>
+          <view class='l2'>
+            <text class='like' space='nbsp'> {{m1.tofixed(item.beauty)}} </text>
+          </view>
+        </view>
+        <text class='num'>{{m1.configs[item.race]}}</text>
+        <!-- <text class='shape '>{{m1.configs[item.face_shape.type]}}</text> -->
+        <view class='stamp'>{{m1.stamp(item.created_at)}}</view>
+        <view class='corner'></view>
+        <image src='../../laji1.png' class='laji' bindtap='del' data-id='{{item.id}}' style=''></image>
+      </view>
+    </swiper-item>
+  </block>
+</swiper>

@@ -2,7 +2,9 @@
   "pages": [
     "pages/image/image",
     "pages/history/history",
-    "pages/index/index"
+    "pages/index/index",
+    "pages/person/person",
+    "pages/historys/historys"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -15,5 +17,11 @@
   },
   "networkTimeout": {
     "request": 10000
+  },
+  "plugins": {
+    "sdkPlugin": {
+      "version": "1.5.4",
+      "provider": "wxc6b86e382a1e3294"
+    }
   }
 }
