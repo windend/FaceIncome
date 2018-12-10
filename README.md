@@ -28,3 +28,4 @@
 [![gh_961dbd6f3596_258.jpg](https://i.loli.net/2018/08/13/5b70fc3735249.jpg)](https://i.loli.net/2018/08/13/5b70fc3735249.jpg)
 [![gh_f1b87667acfd_258.jpg](https://i.loli.net/2018/08/13/5b70fc3741991.jpg)](https://i.loli.net/2018/08/13/5b70fc3741991.jpg)
 
+![cscs](/Users/funny/Documents/aiface/miniprogram/images/cscs.png)
